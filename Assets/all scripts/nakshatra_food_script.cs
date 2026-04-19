@@ -7,7 +7,7 @@ public class nakshatra_food_script : MonoBehaviour
     private float velocity_change_clock;
     public Vector3 velocity;
     public float velocity_normalisation;
-    public float change_timing;
+    public float velocity_change_timing;
     void Start()
     {
         transform.position = generate_random_vector3();
@@ -17,7 +17,17 @@ public class nakshatra_food_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (velocity_change_clock > velocity_change_timing)
+        {
+            velocity = generate_random_vector3()/velocity_normalisation;   
+            velocity_change_clock = 0;
+        }
+        else
+        {
+            velocity_change_clock += Time.deltaTime;
+        }
         transform.position += velocity*Time.deltaTime;
+        
     }
     Vector3 generate_random_vector3()
     {
