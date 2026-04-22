@@ -11,6 +11,7 @@ public class nakshatra_food_script : MonoBehaviour
     public Transform TargetObject;
     public float speed;
     public float turn_speed;
+    public int clock = 0;
     void Start()
     {
         transform.position = generate_random_vector3();
@@ -31,8 +32,15 @@ public class nakshatra_food_script : MonoBehaviour
             turn_speed,
             0f
         );
+        clock += 1;
+        if (clock >= 100)
+        {
+            new_direction += generate_random_vector3()*50;
+            clock = 0;
+        }
+        new_direction.Normalize();   
+        new_direction = new_direction*speed*UnityEngine.Random.Range(1 , 3);
         rb.linearVelocity = new_direction;
-
     }
     Vector3 generate_random_vector3()
     {
