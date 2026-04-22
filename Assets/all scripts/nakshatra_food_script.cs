@@ -6,12 +6,12 @@ public class nakshatra_food_script : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private float velocity_change_clock;
     public Vector3 velocity;
-    public float velocity_normalisation;
     public float velocity_change_timing;
     void Start()
     {
         transform.position = generate_random_vector3();
-        velocity = generate_random_vector3()/velocity_normalisation;
+        velocity = generate_random_vector3();
+        velocity.Normalize();
     }
 
     // Update is called once per frame
@@ -19,7 +19,8 @@ public class nakshatra_food_script : MonoBehaviour
     {
         if (velocity_change_clock > velocity_change_timing)
         {
-            velocity = generate_random_vector3()/velocity_normalisation;   
+            velocity = generate_random_vector3();
+            velocity.Normalize();  
             velocity_change_clock = 0;
         }
         else
