@@ -13,7 +13,6 @@ public class eyeball_scripts : MonoBehaviour
     void Start()
     {
         transform.localPosition = RightPos;
-        Debug.Log("set position" + transform.localPosition);
         ParentScript = GetComponentInParent<goo_script>();
     }
 
