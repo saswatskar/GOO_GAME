@@ -10,7 +10,7 @@ public class nakshatra_food_script : MonoBehaviour
     public Rigidbody2D rb;
     public Transform TargetObject;
     public float speed;
-    public float turn_speed;
+    public float turn_speed = 0.5f;
     public int clock = 0;
     void Start()
     {
@@ -47,7 +47,13 @@ public class nakshatra_food_script : MonoBehaviour
         return new Vector3(
             (float)UnityEngine.Random.Range(-600 , 600)/100,
             (float)UnityEngine.Random.Range(-300 , 300)/100,
-            0);
+            0.1f);
     }
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("goo"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

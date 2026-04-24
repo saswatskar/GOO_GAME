@@ -7,7 +7,7 @@ public class eyeball_scripts : MonoBehaviour
 {
 
     private goo_script ParentScript;
-    public Vector3 RightPos = new Vector3(0f , 0.12f , -0.1f);
+    public Vector3 RightPos = new Vector3(0f , 0.12f , 0.0f);
     public float eye_ball_radius;
 
     void Start()
