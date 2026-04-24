@@ -1,4 +1,6 @@
 
+using System;
+using System.IO.Compression;
 using UnityEngine;
 
 public class main_camera_script : MonoBehaviour
@@ -18,12 +20,21 @@ public class main_camera_script : MonoBehaviour
         {
             displacement = (UnityEngine.Vector2)(Target.transform.position - transform.position);
 
-            if(displacement.magnitude > 2)
+            if(outside_ellipse(5 , 2 , displacement))
             {
-                Debug.Log(displacement + "difference");
                 transform.position += (Vector3)displacement*Time.deltaTime*2;
 
             }        
         }
+    }
+    private Boolean outside_ellipse(float a , float b , Vector2 pos)
+    {
+        float value;
+        value = ((pos.x)*(pos.x))/a*a + (pos.y*pos.y)/b*b;
+        if(value > 1)
+        {
+            return true;
+        }
+        return false;
     }
 }
