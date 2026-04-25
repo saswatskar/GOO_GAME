@@ -17,6 +17,7 @@ public class nakshatra_food_script : MonoBehaviour
     {
         transform.position = HelperFunctions.generate_random_vector3();
         rb.linearVelocity =  Vector2.down*speed;
+        TargetObject = GameObject.FindGameObjectWithTag("goo").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -43,11 +44,12 @@ public class nakshatra_food_script : MonoBehaviour
         new_direction = new_direction*speed*UnityEngine.Random.Range(1 , 3);
         rb.linearVelocity = new_direction;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("goo"))
+        if (collision.gameObject.CompareTag("goo"))
         {
             Destroy(gameObject);
         }
     }
+    
 }
