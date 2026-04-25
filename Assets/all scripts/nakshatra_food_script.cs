@@ -3,6 +3,7 @@
 using Unity.Collections;
 using Unity.Mathematics;
 using UnityEngine;
+using goo_game.utils;
 
 public class nakshatra_food_script : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class nakshatra_food_script : MonoBehaviour
     public int clock = 0;
     void Start()
     {
-        transform.position = generate_random_vector3();
+        transform.position = HelperFunctions.generate_random_vector3();
         rb.linearVelocity =  Vector2.down*speed;
     }
 
@@ -35,19 +36,12 @@ public class nakshatra_food_script : MonoBehaviour
         clock += 1;
         if (clock >= 100)
         {
-            new_direction += generate_random_vector3()*50;
+            new_direction += HelperFunctions.generate_random_vector3()*50;
             clock = 0;
         }
         new_direction.Normalize();   
         new_direction = new_direction*speed*UnityEngine.Random.Range(1 , 3);
         rb.linearVelocity = new_direction;
-    }
-    Vector3 generate_random_vector3()
-    {
-        return new Vector3(
-            (float)UnityEngine.Random.Range(-600 , 600)/100,
-            (float)UnityEngine.Random.Range(-300 , 300)/100,
-            0.1f);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
