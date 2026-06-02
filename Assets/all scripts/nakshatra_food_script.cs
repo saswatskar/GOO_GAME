@@ -9,18 +9,18 @@ public class nakshatra_food_script : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Rigidbody2D rb;
-    public Transform TargetObject;
-    public float speed;
-    public float turn_speed = 0.5f;
-    public int clock = 0;
+    public Transform TargetObject;// the targetobject is goo and TargetObject is referencing the transform component
+    public float speed;//custom variable set to public so that it can be customised directly in the unity engine
+    public float turn_speed = 0.5f;//something made for escape mode
+    public int clock = 0;//controls mode switching behaviour
 
-    public int mode;
+    public int mode;//mode
     public int avoid_mode;
     void Start()
     {
-        transform.position = HelperFunctions.generate_random_vector3();
+        transform.position = HelperFunctions.generate_random_vector3();//generates a random vector3 in a range
         rb.linearVelocity =  Vector2.down*speed;
-        TargetObject = GameObject.FindGameObjectWithTag("goo").GetComponent<Transform>();
+        TargetObject = GameObject.FindGameObjectWithTag("goo").GetComponent<Transform>();//references the goo
     }
 
     // Update is called once per frame
@@ -28,21 +28,21 @@ public class nakshatra_food_script : MonoBehaviour
     {        
     }
 
-    void FixedUpdate()
+    void FixedUpdate()//since nakshatra is a rigidbody , using fixedupdate does all this code on the physics engine
     {
 
-        Vector3 target_vector = transform.position-TargetObject.transform.position ;
+        Vector3 target_vector = transform.position-TargetObject.transform.position ;//displacement vector
 
         if (target_vector.magnitude < 9)
         {
             mode = 1;//avoiding mode
-
+            Debug.Log("move");
             if (clock%200 <70)
             {
                 mode = 2;
                 if (clock%200 == 90)
                 {
-                    if (UnityEngine.Random.Range(0, 2) == 1)
+                    if (UnityEngine.Random.Range(0, 10)%2 == 1)
                     {
                         avoid_mode = 1;
                     }
@@ -50,7 +50,11 @@ public class nakshatra_food_script : MonoBehaviour
                 }
             }        
         }
-        else mode = 0;
+        else
+        { 
+            Debug.Log("stop");
+            mode = 0;
+        }
         switch (mode)
         {
             case 1 ://escape mode
