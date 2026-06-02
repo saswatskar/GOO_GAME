@@ -36,7 +36,7 @@ public class nakshatra_food_script : MonoBehaviour
         if (target_vector.magnitude < 9)
         {
             mode = 1;//avoiding mode
-            Debug.Log("move");
+            rb.linearVelocity =  target_vector;
             if (clock%200 <70)
             {
                 mode = 2;
@@ -52,7 +52,6 @@ public class nakshatra_food_script : MonoBehaviour
         }
         else
         { 
-            Debug.Log("stop");
             mode = 0;
         }
         switch (mode)
