@@ -104,6 +104,11 @@ public class nakshatra_food_script : Character
     {
         if (collision.gameObject.CompareTag("goo"))
         {
+            Character other = collision.gameObject.GetComponent<Character>();
+            if(other!=null)
+            {
+                other.addmass(mass);
+            }
             Destroy(gameObject);
         }
     }

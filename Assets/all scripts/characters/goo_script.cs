@@ -1,19 +1,20 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class goo_script : MonoBehaviour
+public class goo_script : Character
 {
     public float moveSpeed;
     private Vector2 _moveDirection;
 
     public InputActionReference move;
 
-    public int mass;
-
+    private void Start()
+    {
+        mass = 10;
+    }
     private void Update()
     {
         _moveDirection = move.action.ReadValue<Vector2>();
-
 
         transform.position +=(Vector3)_moveDirection*moveSpeed*Time.deltaTime;
     }

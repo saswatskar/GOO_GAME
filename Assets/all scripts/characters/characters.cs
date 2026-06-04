@@ -5,4 +5,9 @@ public class Character : MonoBehaviour
     public int Mass => mass;
     [SerializeField] protected float density = 1f;
     public float Density => density;
+
+    public void addmass(int amount)
+    {
+        mass+=amount;
+    }
 }
