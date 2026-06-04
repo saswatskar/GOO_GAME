@@ -4,8 +4,9 @@ using Unity.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 using goo_game.utils;
+using System.Linq.Expressions;
 
-public class nakshatra_food_script : MonoBehaviour
+public class nakshatra_food_script : Character
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Rigidbody2D rb;
@@ -13,7 +14,6 @@ public class nakshatra_food_script : MonoBehaviour
     public float speed;//custom variable set to public so that it can be customised directly in the unity engine
     public float turn_speed = 0.5f;//something made for escape mode
     public int clock = 0;//controls mode switching behaviour
-
     public int mode;//mode
     public int avoid_mode;
     void Start()
@@ -21,6 +21,7 @@ public class nakshatra_food_script : MonoBehaviour
         transform.position = HelperFunctions.generate_random_vector3();//generates a random vector3 in a range
         rb.linearVelocity =  Vector2.down*speed;
         TargetObject = GameObject.FindGameObjectWithTag("goo").GetComponent<Transform>();//references the goo
+        mass = 4;
     }
 
     // Update is called once per frame

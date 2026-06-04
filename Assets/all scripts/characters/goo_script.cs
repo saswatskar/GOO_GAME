@@ -8,6 +8,8 @@ public class goo_script : MonoBehaviour
 
     public InputActionReference move;
 
+    public int mass;
+
     private void Update()
     {
         _moveDirection = move.action.ReadValue<Vector2>();
