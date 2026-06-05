@@ -491,6 +491,17 @@ CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 2707333185473595342, guid: 3fcd2ac5a08c82042ae46d6b6a5aa28e, type: 3}
   m_PrefabInstance: {fileID: 6004268323170929724}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &567981448 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6313705980206284631, guid: 3fcd2ac5a08c82042ae46d6b6a5aa28e, type: 3}
+  m_PrefabInstance: {fileID: 6004268323170929724}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567981444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96f3d97e770b924ab19fa7b090e472f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &864915206
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,6 +699,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   Target: {fileID: 567981444}
+  cameracomponent: {fileID: 1515667018}
+  goo_script: {fileID: 567981448}
 --- !u!1 &1986306125
 GameObject:
   m_ObjectHideFlags: 0
