@@ -486,6 +486,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5151524708639446474, guid: 3fcd2ac5a08c82042ae46d6b6a5aa28e, type: 3}
   m_PrefabInstance: {fileID: 6004268323170929724}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &567981446 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2707333185473595342, guid: 3fcd2ac5a08c82042ae46d6b6a5aa28e, type: 3}
+  m_PrefabInstance: {fileID: 6004268323170929724}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &864915206
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,6 +856,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: goo
       objectReference: {fileID: 0}
+    - target: {fileID: 6313705980206284631, guid: 3fcd2ac5a08c82042ae46d6b6a5aa28e, type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 567981446}
+    - target: {fileID: 6313705980206284631, guid: 3fcd2ac5a08c82042ae46d6b6a5aa28e, type: 3}
+      propertyPath: density_control
+      value: 
+      objectReference: {fileID: -7873577264596525148, guid: 2a1843c81de1ce14093d2dc043121385, type: 3}
     - target: {fileID: 9083869927027153475, guid: 3fcd2ac5a08c82042ae46d6b6a5aa28e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.21

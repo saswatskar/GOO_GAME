@@ -20,7 +20,8 @@ public class goo_script : Character
         transform.position +=(Vector3)_moveDirection*moveSpeed*Time.deltaTime;
         _density_change = density_control.action.ReadValue<float>();
         density += _density_change*Time.deltaTime;
-        transform.localScale -= transform.localScale*(0.5f)*_density_change*Time.deltaTime/density;
+        float scale = 0.136f * Mathf.Sqrt((float)mass / density);
+        transform.localScale = Vector3.one * scale;
     }
 
     public Vector2 get_moveDirection()

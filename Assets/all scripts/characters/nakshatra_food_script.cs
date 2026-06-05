@@ -108,7 +108,6 @@ public class nakshatra_food_script : Character
             if(other!=null)
             {
                 other.addmass(mass);
-                other.transform.localScale *=math.sqrt((float)mass/(other.Mass) + 1);
             }
             Destroy(gameObject);
         }
