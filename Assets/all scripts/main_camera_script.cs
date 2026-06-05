@@ -8,10 +8,8 @@ public class main_camera_script : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public GameObject Target;
     private UnityEngine.Vector2 displacement;
-    void Start()
-    {
-        
-    }
+    public Camera cameracomponent;
+    public goo_script goo_script;
 
     // Update is called once per frame
     void Update()
@@ -26,6 +24,14 @@ public class main_camera_script : MonoBehaviour
 
             }        
         }
+        float targetSize = 9.3f * goo_script.get_scale();
+
+        cameracomponent.orthographicSize =
+            Mathf.Lerp(
+                cameracomponent.orthographicSize,
+                targetSize,
+                2f * Time.deltaTime
+            );
     }
     private Boolean outside_ellipse(float a , float b , Vector2 pos)
     {
