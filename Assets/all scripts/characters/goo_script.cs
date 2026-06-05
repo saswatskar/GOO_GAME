@@ -22,6 +22,7 @@ public class goo_script : Character
         density += _density_change*Time.deltaTime;
         float scale = 0.136f * Mathf.Sqrt((float)mass / density);
         transform.localScale = Vector3.one * scale;
+        density = Mathf.Clamp(density, 0.5f, 1.5f);
     }
 
     public Vector2 get_moveDirection()
