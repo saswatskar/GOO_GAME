@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Unity.Mathematics;
 
 public class goo_script : Character
 {
@@ -15,7 +16,6 @@ public class goo_script : Character
     private void Update()
     {
         _moveDirection = move.action.ReadValue<Vector2>();
-
         transform.position +=(Vector3)_moveDirection*moveSpeed*Time.deltaTime;
     }
 
