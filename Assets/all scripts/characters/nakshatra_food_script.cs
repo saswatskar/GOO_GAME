@@ -41,7 +41,7 @@ public class nakshatra_food_script : Character
             if (clock%200 <70)
             {
                 mode = 2;
-                if (clock%200 == 90)
+                if (clock%200 == 50)
                 {
                     if (UnityEngine.Random.Range(0, 10)%2 == 1)
                     {
