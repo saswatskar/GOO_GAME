@@ -20,4 +20,12 @@ public class Character : MonoBehaviour
     {
         return scale;
     }
+    public float get_density()
+    {
+        return density;
+    }
+    public int get_mass()
+    {
+        return mass;
+    }
 }
