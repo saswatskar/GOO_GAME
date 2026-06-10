@@ -280,7 +280,9 @@ MonoBehaviour:
   mass: 0
   density: 1
   moveSpeed: 5
+  scale: 0
   move: {fileID: 8410203606117902099, guid: 2a1843c81de1ce14093d2dc043121385, type: 3}
+  density_control: {fileID: -7873577264596525148, guid: 2a1843c81de1ce14093d2dc043121385, type: 3}
 --- !u!58 &2707333185473595342
 CircleCollider2D:
   m_ObjectHideFlags: 0

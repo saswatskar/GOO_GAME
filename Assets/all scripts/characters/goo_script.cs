@@ -7,8 +7,6 @@ public class goo_script : Character
     public float moveSpeed;
     private Vector2 _moveDirection;
     private float _density_change;
-    [SerializeField] float scale;
-
     public InputActionReference move;
     public InputActionReference density_control;
     private void Start()
@@ -30,8 +28,5 @@ public class goo_script : Character
     { 
         return _moveDirection;
     }
-    public float get_scale()
-    {
-        return scale;
-    }
+    
 }
