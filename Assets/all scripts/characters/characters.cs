@@ -7,6 +7,11 @@ public class Character : MonoBehaviour
     public float Density => density;
     [SerializeField] protected float scale = 1f;
     public float Scale => scale;
+    public void set_localscale(float scalefactor)
+    {
+        scale = Mathf.Sqrt((float)mass / density);
+        transform.localScale = Vector3.one*scale*scalefactor;
+    }
     public void addmass(int amount)
     {
         mass+=amount;

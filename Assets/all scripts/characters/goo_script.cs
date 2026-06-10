@@ -6,6 +6,7 @@ public class goo_script : Character
 {
     public float moveSpeed;
     private Vector2 _moveDirection;
+    public float gooscale = 0.136f;
     private float _density_change;
     public InputActionReference move;
     public InputActionReference density_control;
@@ -15,12 +16,11 @@ public class goo_script : Character
     }
     private void Update()
     {
+        set_localscale(gooscale);
         _moveDirection = move.action.ReadValue<Vector2>();
         transform.position +=(Vector3)_moveDirection*moveSpeed*Time.deltaTime;
         _density_change = density_control.action.ReadValue<float>();
         density += _density_change*Time.deltaTime;
-        scale = 0.136f * Mathf.Sqrt((float)mass / density);
-        transform.localScale = Vector3.one * scale;
         density = Mathf.Clamp(density, 0.5f, 1.5f);
     }
 

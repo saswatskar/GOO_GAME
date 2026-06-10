@@ -106,8 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d25a1c6369139f344858252aafc4b04b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  mass: 1
+  mass: 10
   density: 1
+  scale: 1
   rb: {fileID: 6257434497086179130}
   TargetObject: {fileID: 0}
   speed: 1
@@ -115,6 +116,7 @@ MonoBehaviour:
   clock: 0
   mode: 0
   avoid_mode: 0
+  nakscale: 0.136
 --- !u!50 &6257434497086179130
 Rigidbody2D:
   serializedVersion: 5

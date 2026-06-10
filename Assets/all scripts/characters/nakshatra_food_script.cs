@@ -16,12 +16,16 @@ public class nakshatra_food_script : Character
     public int clock = 0;//controls mode switching behaviour
     public int mode;//mode
     public int avoid_mode;
+    public float nakscale = 0.1f;
     void Start()
     {
+        mass = 4;
+        density = 1.07f;
+        nakscale = 0.04f;
         transform.position = HelperFunctions.generate_random_vector3();//generates a random vector3 in a range
         rb.linearVelocity =  Vector2.down*speed;
         TargetObject = GameObject.FindGameObjectWithTag("goo").GetComponent<Transform>();//references the goo
-        mass = 4;
+        
     }
 
     // Update is called once per frame
@@ -31,7 +35,7 @@ public class nakshatra_food_script : Character
 
     void FixedUpdate()//since nakshatra is a rigidbody , using fixedupdate does all this code on the physics engine
     {
-
+        set_localscale(nakscale);
         Vector3 target_vector = transform.position-TargetObject.transform.position ;//displacement vector
 
         if (target_vector.magnitude < 9)
