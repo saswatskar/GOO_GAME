@@ -5,6 +5,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using goo_game.utils;
 using System.Linq.Expressions;
+using System;
 
 public class nakshatra_food_script : Character
 {
@@ -17,6 +18,9 @@ public class nakshatra_food_script : Character
     public int mode;//mode
     public int avoid_mode;
     public float nakscale = 0.1f;
+    private int collidersInside = 0;
+    private int totalColliders = 3;
+    
     void Start()
     {
         mass = 4;
@@ -25,6 +29,7 @@ public class nakshatra_food_script : Character
         transform.position = HelperFunctions.generate_random_vector3();//generates a random vector3 in a range
         rb.linearVelocity =  Vector2.down*speed;
         TargetObject = GameObject.FindGameObjectWithTag("goo").GetComponent<Transform>();//references the goo
+        totalColliders = GetComponentsInChildren<Collider2D>().Length;
         
     }
 
@@ -104,12 +109,20 @@ public class nakshatra_food_script : Character
 
         clock++;
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("goo"))
         {
+            collidersInside++;
+            if(collidersInside!=totalColliders)
+            {
+                return;
+            }
             Character other = collision.gameObject.GetComponent<Character>();
-            if(other.Density>density && other.Scale>scale)
+            if(other.Density<density || other.Scale<scale)
+            {
+                return;
+            }
             if(other!=null)
             {
                 other.addmass(mass);
@@ -117,5 +130,12 @@ public class nakshatra_food_script : Character
             }
         }
     }
-    
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("goo"))
+        {
+            collidersInside--;
+        }
+    }
+
 }

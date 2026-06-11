@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 6313705980206284631}
   - component: {fileID: 2707333185473595342}
   - component: {fileID: 660304181603768210}
+  - component: {fileID: -1276275425257705271}
   m_Layer: 0
   m_Name: goo
   m_TagString: goo
@@ -279,8 +280,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   mass: 0
   density: 1
-  moveSpeed: 5
   scale: 0
+  moveSpeed: 5
+  gooscale: 0.136
   move: {fileID: 8410203606117902099, guid: 2a1843c81de1ce14093d2dc043121385, type: 3}
   density_control: {fileID: -7873577264596525148, guid: 2a1843c81de1ce14093d2dc043121385, type: 3}
 --- !u!58 &2707333185473595342
@@ -346,6 +348,49 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!68 &-1276275425257705271
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5151524708639446474}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -2.3199997, y: 0}
+  - {x: 2.3199997, y: 0}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &6356391093595460376
 GameObject:
   m_ObjectHideFlags: 0
