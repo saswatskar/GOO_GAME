@@ -25,6 +25,11 @@ public class goo_script : Character
         set_localscale(gooscale);
         _moveDirection = move.action.ReadValue<Vector2>();
         transform.position +=(Vector3)_moveDirection*moveSpeed*Time.deltaTime;
+        if(transform.position.y>11.5 || transform.position.y<-11.5 || transform.position.x>20 || transform.position.x<-20)
+        {
+            transform.position -=(Vector3)_moveDirection*moveSpeed*2*Time.deltaTime;
+        }
+
         _density_change = density_control.action.ReadValue<float>();
         density += _density_change*Time.deltaTime;
         density = Mathf.Clamp(density, 0.5f, 1.5f);
