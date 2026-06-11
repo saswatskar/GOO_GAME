@@ -20,6 +20,8 @@ public class nakshatra_food_script : Character
     public float nakscale = 0.1f;
     private int collidersInside = 0;
     private int totalColliders = 3;
+    public SpriteRenderer sprite;
+    private Character GOO;
     
     void Start()
     {
@@ -30,7 +32,8 @@ public class nakshatra_food_script : Character
         rb.linearVelocity =  Vector2.down*speed;
         TargetObject = GameObject.FindGameObjectWithTag("goo").GetComponent<Transform>();//references the goo
         totalColliders = GetComponentsInChildren<Collider2D>().Length;
-        
+        GOO = GameObject.FindGameObjectWithTag("goo").GetComponent<Character>();
+        naming = "nakshatra";
     }
 
     // Update is called once per frame
@@ -42,7 +45,8 @@ public class nakshatra_food_script : Character
     {
         set_localscale(nakscale);
         Vector3 target_vector = transform.position-TargetObject.transform.position ;//displacement vector
-
+        if(GOO.Density>density)sprite.sortingOrder=0;
+        else sprite.sortingOrder = 2;
         if (target_vector.magnitude < 9)
         {
             mode = 1;//avoiding mode

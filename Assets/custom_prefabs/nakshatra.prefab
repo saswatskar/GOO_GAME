@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6229757289558677658}
   m_Layer: 0
   m_Name: nakshatra
-  m_TagString: Untagged
+  m_TagString: nakshatra
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,6 +111,7 @@ MonoBehaviour:
   mass: 10
   density: 1
   scale: 1
+  naming: 
   rb: {fileID: 6257434497086179130}
   TargetObject: {fileID: 0}
   speed: 1
@@ -119,6 +120,7 @@ MonoBehaviour:
   mode: 0
   avoid_mode: 0
   nakscale: 0.136
+  sprite: {fileID: 8089959633537193707}
 --- !u!50 &6257434497086179130
 Rigidbody2D:
   serializedVersion: 5

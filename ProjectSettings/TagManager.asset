@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - '"goo"'
   - goo
+  - nakshatra
   layers:
   - Default
   - TransparentFX

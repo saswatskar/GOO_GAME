@@ -24,7 +24,7 @@ public class main_camera_script : MonoBehaviour
 
             }        
         }
-        float targetSize = 1.265f * goo_script.get_scale();
+        float targetSize = 1.265f * goo_script.Scale;
 
         cameracomponent.orthographicSize =
             Mathf.Lerp(

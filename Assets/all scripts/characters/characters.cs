@@ -7,6 +7,8 @@ public class Character : MonoBehaviour
     public float Density => density;
     [SerializeField] protected float scale = 1f;
     public float Scale => scale;
+    [SerializeField] protected string naming;
+    public string Name=>naming;
     public void set_localscale(float scalefactor)
     {
         scale = Mathf.Sqrt((float)mass / density);
@@ -15,17 +17,5 @@ public class Character : MonoBehaviour
     public void addmass(int amount)
     {
         mass+=amount;
-    }
-    public float get_scale()
-    {
-        return scale;
-    }
-    public float get_density()
-    {
-        return density;
-    }
-    public int get_mass()
-    {
-        return mass;
     }
 }
