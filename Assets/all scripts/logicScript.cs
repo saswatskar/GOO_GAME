@@ -9,7 +9,7 @@ public class logicScript : MonoBehaviour
     {
         infotext.text = "density = "+GOO.get_density().ToString()+"\n";
         infotext.text+= "mass = "+GOO.get_mass().ToString()+"\n";
-        infotext.text+= "scale = "+GOO.get_scale().ToString()+"\n";
+        infotext.text+= "size = "+((int)(GOO.get_scale()*100)).ToString()+"\n";
     }
     private void Update()
     {
